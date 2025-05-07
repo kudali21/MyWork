@@ -1,3 +1,5 @@
+#Vasuki kudali  pfs22
+
 def rock_paper_scissors():
   return '''
   ***Rock Paper Scissors***
@@ -153,8 +155,19 @@ def move_zeros_right():
   ***Move All Zeros to Right***
 
   arr = list(map(int, input("Enter numbers separated by space: ").split()))
-  arr.sort(key=lambda x: x == 0)
-  print(f"Array after moving zeros to the right: {arr}")
+  result = []
+  zero_count = 0
+
+  for num in arr:
+    if num != 0:
+      result.append(num)
+    else:
+      zero_count += 1
+
+  for _ in range(zero_count):
+    result.append(0)
+
+  print(f"Array after moving zeros to the right: {result}")
   ==========================================
   Testcase-1:
   Enter numbers separated by space: 1 0 2 0 3
@@ -165,6 +178,7 @@ def move_zeros_right():
   Array after moving zeros to the right: [1, 0, 0, 0]
   ==========================================
   '''
+
 def sum_of_ap_series():
   return '''
   ***Sum of AP Series***
